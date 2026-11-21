@@ -1,0 +1,19 @@
+n,m = map(int,input().split())
+fr,fc = n-1,m-1
+lr,lc = 0,0
+mx = []
+for _ in range(n):
+    d = input()
+    mx.append(d)
+for i in range(n):
+    for j in range(m):
+        if mx[i][j] == "*":
+            fr = min(fr,i)
+            fc = min(fc,j)
+        if mx[i][j] == "*":
+            lr = max(lr,i+1)
+            lc = max(lc,j+1)
+for i in range(fr,lr):
+    for j in range(fc,lc):
+        print(mx[i][j] , end = "")
+    print()         
