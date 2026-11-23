@@ -1,0 +1,15 @@
+t = int(input())
+for _ in range(t):
+    n = int(input())
+    p = list(map(int, input().split()))
+    x = []
+    for i in range(n):
+        if p[i] != i + 1:
+            x.append(i + 1)
+    m = len(x)
+    y = True
+    for i in range(m):
+        if p[x[i] - 1] != x[m - 1 - i]:
+            y = False
+            break
+    print("YES" if y else "NO")
